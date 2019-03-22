@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir ../temp
 cd ../temp
 mkdir software
 cd software
