@@ -4,6 +4,8 @@ mkdir ../temp
 cd ../temp
 mkdir results
 mkdir software
+mkdir sras
+mkdir fastqs
 cd software
 
 #Downlaod sra toolkit
