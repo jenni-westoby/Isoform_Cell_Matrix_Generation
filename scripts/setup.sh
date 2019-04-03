@@ -2,6 +2,7 @@
 
 mkdir ../temp
 cd ../temp
+mkdir results
 mkdir software
 cd software
 
