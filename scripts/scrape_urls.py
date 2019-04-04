@@ -28,7 +28,7 @@ for div in soup.find_all('a'):
     if candidate.startswith("SRR"):
 
        #make the url and write it to file
-       url = "ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/" + candidate[0:5] + "/" + candidate + "/" + candidate + ".sra"
+       url = "ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/" + candidate[0:6] + "/" + candidate + "/" + candidate + ".sra"
        f.write(url)
        f.write('\n')
 
