@@ -1,6 +1,6 @@
 #!/bin/bash
 
-input_arr=$1
+input_arr=("$@")
 cd sras
 
 for i in "${input_arr[@]}"
