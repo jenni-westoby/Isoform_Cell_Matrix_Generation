@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #if necessary set-up
-./setup.sh
+#./setup.sh
 
 #Use beautiful soup to get urls
-python scrape_urls.py $1
+#python scrape_urls.py $1
 
 #Use Kallisto for quant
 total=`wc -l urls.txt | awk '{print $1}'`
@@ -20,4 +20,4 @@ do
 done
 
 #make results matrices
-python ./generate.py Kallisto `pwd` results
+#python ./generate.py Kallisto `pwd` results
