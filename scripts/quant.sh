@@ -1,23 +1,24 @@
 #!/bin/bash
 
 input_arr=("$@")
-cd sras
+cd ../temp/sras
 
 for i in "${input_arr[@]}"
 do
   #wget url
-  wget -t 100 $i
+  ../software/sratoolkit.2.9.0-ubuntu64/bin/prefetch $i
   
   #extract string from url
-  filename=`echo $i | awk -F/ '{print $11}'`
+  filename=`echo $i`
   
+  cd sra
   #extract fastqs
-   ../software/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump --split-3 $filename".sra"
+   ../../software/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump $filename".sra"
     
   #Kallisto quantification 
-  ../software/kallisto quant -i ../index/transcripts.idx --threads=8 --output-dir=../results $filename'_1.fq' $filename'_2.fq'
+  ../../software/salmon-latest_linux_x86_64/bin/salmon --no-version-check quant -i ../../index/transcripts.idx -l A --threads=8 -o ../../results/$filename -r $filename'.fastq'
   
   #Delete everything except Kallisto results
-  rm $filename*
+  #rm $filename*
   
 done
