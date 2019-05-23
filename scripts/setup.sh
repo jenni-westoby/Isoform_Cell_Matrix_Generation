@@ -26,10 +26,10 @@ fi
 mkdir ../genome
 cd ../genome
 
-wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M20/gencode.vM20.pc_transcripts.fa.gz
-gunzip gencode.vM20.pc_transcripts.fa.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M20/gencode.vM20.transcripts.fa.gz
+gunzip gencode.vM20.transcripts.fa.gz
 
 mkdir ../index
 cd ../index
 
-../software/kallisto_linux-v0.43.1/kallisto index -i transcripts.idx ../genome/gencode.vM20.pc_transcripts.fa
+../software/kallisto_linux-v0.43.1/kallisto index -i transcripts.idx ../genome/gencode.vM20.transcripts.fa
