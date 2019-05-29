@@ -1,0 +1,9 @@
+bkill JOBID
+bkill 1320485
+bkill 1320490
+bkill 1320491
+bkill 1320489
+bkill 1320492
+bkill 1320488
+bkill 1320486
+bkill 1320487
