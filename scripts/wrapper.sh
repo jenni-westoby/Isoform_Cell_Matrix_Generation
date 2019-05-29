@@ -13,10 +13,9 @@ IFS=$'\n' read -d '' -r -a lines < urls.txt
 
 for i in `seq 0 10 $total`
 do
-  end=$(($i+9))
   
   #Need to add some bsub stuff here
-   bsub -n8 -R"span[hosts=1]" -c 99999 -G team_hemberg -q normal -o $TEAM/temp.logs/output.kallisto_$i -e $TEAM/temp.logs/error.kallisto_$i -R"select[mem>100000] rusage[mem=100000]" -M100000 ./quant.sh ${lines[@]:$i:$end}
+   bsub -n8 -R"span[hosts=1]" -c 99999 -G team_hemberg -q normal -o $TEAM/temp.logs/output.kallisto_$i -e $TEAM/temp.logs/error.kallisto_$i -R"select[mem>100000] rusage[mem=100000]" -M100000 ./quant.sh ${lines[@]:$i:10}
 done
 
 #make results matrices

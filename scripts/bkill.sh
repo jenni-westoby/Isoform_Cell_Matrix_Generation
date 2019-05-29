@@ -1,0 +1,11 @@
+bkill JOBID
+bkill 1407216
+bkill 1407208
+bkill 1407209
+bkill 1407210
+bkill 1407211
+bkill 1407212
+bkill 1407213
+bkill 1407214
+bkill 1407215
+bkill 1407217
