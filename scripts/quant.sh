@@ -15,7 +15,7 @@ do
    ../software/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump --split-3 $filename".sra"
     
   #Kallisto quantification 
-  ../software/kallisto quant -i ../index/transcripts.idx --threads=8 --output-dir=../results $filename'_1.fq' $filename'_2.fq'
+  ../software/kallisto quant -i ../index/transcripts.idx --threads=8 --output-dir=../results/$filename $filename'_1.fq' $filename'_2.fq'
   
   #Delete everything except Kallisto results
   rm $filename*
