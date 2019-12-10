@@ -1,3 +1,6 @@
+library(ggplot2)
+
+
 # read in data
 downsampled <- read.csv("bulk_downsampled_counts.txt", header = T, row.names =1 , sep = "\t")
 
@@ -48,3 +51,7 @@ single_cell <- single_cell > 0
 single_cell_overlap <- get_overlap(genes_list, gene_iso_relationships, bulk, single_cell,"single cell")
 
 overlap_df <- rbind(downsampled_overlap, single_cell_overlap)
+                          
+                          
+ggplot(data = overlap_df, aes(x = Data, y = mean_overlap, fill=Data)) + ylab("Mean Overlap") + xlab("Data") + geom_boxplot() + geom_jitter( size = 0.5) + theme(text = element_text(size=20))
+ggsave("Downsampling_results.png", plot = last_plot())
