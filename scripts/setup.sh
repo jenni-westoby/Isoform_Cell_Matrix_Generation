@@ -1,16 +1,16 @@
 #!/bin/bash
 
-mkdir ../temp
+#mkdir ../temp
 cd ../temp
 mkdir results
 mkdir software
-mkdir sras
-mkdir fastqs
+#mkdir sras
+#mkdir fastqs
 cd software
 
 #Downlaod sra toolkit
-wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.0/sratoolkit.2.9.0-ubuntu64.tar.gz
-tar -xvzf sratoolkit.2.9.0-ubuntu64.tar.gz
+#wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.0/sratoolkit.2.9.0-ubuntu64.tar.gz
+#tar -xvzf sratoolkit.2.9.0-ubuntu64.tar.gz
 
 #Install Kallisto
 wget https://github.com/pachterlab/kallisto/releases/download/v0.43.1/kallisto_linux-v0.43.1.tar.gz
@@ -23,13 +23,25 @@ else
   echo "Successfully installed Kallisto"
 fi
 
-mkdir ../genome
+#mkdir ../genome
 cd ../genome
 
-wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M20/gencode.vM20.pc_transcripts.fa.gz
-gunzip gencode.vM20.pc_transcripts.fa.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M20/gencode.vM20.transcripts.fa.gz
+gunzip gencode.vM20.transcripts.fa.gz
 
-mkdir ../index
+#mkdir ../index
 cd ../index
 
-../software/kallisto_linux-v0.43.1/kallisto index -i transcripts.idx ../genome/gencode.vM20.pc_transcripts.fa
+../software/kallisto_linux-v0.43.1/kallisto index -i transcripts.idx ../genome/gencode.vM20.transcripts.fa
+
+#install seqtk
+
+cd ../fastqs
+git clone https://github.com/lh3/seqtk.git;
+cd seqtk; make
+
+#get data
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR522/ERR522956/ERR522956_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR522/ERR522956/ERR522956_2.fastq.gz
+gunzip ERR522956_1.fastq.gz
+gunzip ERR522956_1.fastq.gz

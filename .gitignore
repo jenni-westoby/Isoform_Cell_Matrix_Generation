@@ -1,0 +1,8 @@
+temp/fastqs/*.fastq
+temp/fastqs/*.fq
+temp/fastqs/seqtk
+temp/index/*
+temp/genome/*
+temp/results/*
+temp/software/*
+scripts/*.txt

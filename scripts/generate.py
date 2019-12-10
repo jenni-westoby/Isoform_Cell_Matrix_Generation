@@ -32,7 +32,7 @@ elif program == "ground_truth":
     writefile("ground_truth", "Simulation/data/simulated/*.isoforms.results", "rsem-generate-data-matrix6", "FPKM")
 
 elif program == "Kallisto":
-    writefile("Kallisto", "Simulation/Kallisto_results/*/abundance.tsv", "rsem-generate-data-matrix3", "Counts")
+    writefile("Kallisto", "../temp/results/*/abundance.tsv", "rsem-generate-data-matrix3", "Counts")
 
 elif program == "Kallisto_real":
     writefile("Kallisto_real", "Simulation/Kallisto_results_real_data/*/abundance.tsv", "rsem-generate-data-matrix3", "Counts")
@@ -56,4 +56,4 @@ elif program == "eXpress":
     writefile("eXpress", "Simulation/eXpress_results/*/results.xprs", "rsem-generate-data-matrix13", "TPM")
 
 else:
-print "Wrong argument supplied, try again."
+	print "Wrong argument supplied, try again."
